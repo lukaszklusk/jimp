@@ -16,7 +16,7 @@ TEST_F(Array2DStep1Tests, Define_Array2D_FunctionOf_N_Rows_And_N_Columns_FilledU
        {15, 16, 17, 18, 19, 20, 21},
        {22, 23, 24, 25, 26, 27, 28},
        {29, 30, 31, 32, 33, 34, 35}};
-  int **output = Array2D(k_rows, k_cols);
+  int **output = NewArray2D(k_rows, k_cols);
   for (int x = 0; x < k_rows; ++x) {
     for (int y = 0; y < k_cols; ++y) {
       EXPECT_EQ(expected[x][y], output[x][y]) << "element (" << x << ", " << y << ")\n";
@@ -27,9 +27,9 @@ TEST_F(Array2DStep1Tests, Define_Array2D_FunctionOf_N_Rows_And_N_Columns_FilledU
 }
 
 TEST_F(Array2DStep1Tests, InvalidArgumentsShouldResultWithNullptr) {
-  EXPECT_EQ(nullptr, Array2D(0, 0));
-  EXPECT_EQ(nullptr, Array2D(10, 0));
-  EXPECT_EQ(nullptr, Array2D(0, 7));
-  EXPECT_EQ(nullptr, Array2D(-9, 18));
-  EXPECT_EQ(nullptr, Array2D(-1, -1));
+  EXPECT_EQ(nullptr, NewArray2D(0, 0));
+  EXPECT_EQ(nullptr, NewArray2D(10, 0));
+  EXPECT_EQ(nullptr, NewArray2D(0, 7));
+  EXPECT_EQ(nullptr, NewArray2D(-9, 18));
+  EXPECT_EQ(nullptr, NewArray2D(-1, -1));
 }
