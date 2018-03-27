@@ -4,5 +4,3 @@
 
 #include "Point.h"
 #include "Square.h"
-
-}

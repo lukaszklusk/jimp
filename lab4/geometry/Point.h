@@ -18,6 +18,9 @@ namespace geometry{
     class Point {
     public:
         Point(double x, double y);
+
+        Point();
+
         double Distance(const Point &other) const;
 
         double GetX() const;
@@ -36,6 +39,7 @@ namespace geometry{
     double Point::Distance(const Point &other) const{
         return sqrt(pow(GetX()-other.GetX(),2)+pow(GetY()-other.GetY(),2));
     }
+
 }
 
 #endif //JIMP_EXERCISES_POINT_H
