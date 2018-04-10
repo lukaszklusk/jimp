@@ -45,6 +45,8 @@ script:
   - tests/lab2test/lab2_polybius_step2_tests
   - make lab2_xor_cypher_breaker_tests
   - tests/lab2test/lab2_xor_cypher_breaker_tests
+  - make lab5_matrix_tests
+  - tests/lab5test/la5_matrix_tests
   - make lab5_text_pool_tests
   - tests/lab5test/lab5_text_pool_tests
   
