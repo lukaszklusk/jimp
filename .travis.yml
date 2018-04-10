@@ -25,6 +25,8 @@ script:
     cmake -DCMAKE_CXX_COMPILER=$CXX ..
   - make lab1_double_base_palindrome_tests
   - tests/lab1test/lab1_double_base_palindrome_tests
+  - make lab1_reverse_string_tests
+  - tests/lab1test/lab1_reverse_string_tests
   - make lab2_array_2d_step1_tests
   - tests/lab2test/lab2_array_2d_step1_tests
   - make lab2_array_2d_step2_tests
@@ -45,8 +47,30 @@ script:
   - tests/lab2test/lab2_polybius_step2_tests
   - make lab2_xor_cypher_breaker_tests
   - tests/lab2test/lab2_xor_cypher_breaker_tests
+  - make lab3_smart_tree_step1_tests
+  - tests/lab3test/lab3_smart_tree_step1_tests
+  - make lab3_smart_tree_step2_tests
+  - tests/lab3test/lab3_smart_tree_step2_tests
+  - make lab3_smart_tree_step3_tests
+  - tests/lab3test/lab3_smart_tree_step3_tests
+  - make lab3_smart_tree_step4_tests
+  - tests/lab3test/lab3_smart_tree_step4_tests
+  - make lab3_smart_tree_step5_tests
+  - tests/lab3test/lab3_smart_tree_step5_tests
+  - make lab3_tiny_url_step1_tests
+  - tests/tab3test/lab3_tiny_url_step1_tests
+  - make lab3_tiny_url_step2_tests
+  - tests/tab3test/lab3_tiny_url_step2_tests
+  - make lab4_simple_json_tests
+  - tests/tab4test/lab4_simple_json_tests
+  - make lab4_simple_template_engine_tests
+  - tests/tab4test/lab4_simple_template_engine_tests
+  - make lab4_simple_template_engine_tests
+  - tests/tab4test/lab4_simple_template_engine_tests
+  - make lab4_simple_template_engine_injection_tests
+  - tests/tab4test/lab4_simple_template_engine_injection_tests
   - make lab5_matrix_tests
-  - tests/lab5test/la5_matrix_tests
+  - tests/lab5test/lab5_matrix_tests
   - make lab5_text_pool_tests
   - tests/lab5test/lab5_text_pool_tests
   
