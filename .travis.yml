@@ -64,11 +64,11 @@ script:
   - make lab4_simple_json_tests
   - tests/tab4test/lab4_simple_json_tests
   - make lab4_simple_template_engine_tests
-  - tests/tab4test/lab4_simple_template_engine_tests
+  - tests/lab4test/lab4_simple_template_engine_tests
   - make lab4_simple_template_engine_tests
-  - tests/tab4test/lab4_simple_template_engine_tests
+  - tests/lab4test/lab4_simple_template_engine_tests
   - make lab4_simple_template_engine_injection_tests
-  - tests/tab4test/lab4_simple_template_engine_injection_tests
+  - tests/lab4test/lab4_simple_template_engine_injection_tests
   - make lab5_matrix_tests
   - tests/lab5test/lab5_matrix_tests
   - make lab5_text_pool_tests
