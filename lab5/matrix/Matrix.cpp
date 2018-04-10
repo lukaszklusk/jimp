@@ -83,7 +83,8 @@ algebra::Matrix::Matrix(std::initializer_list<std::vector<std::complex<double>>>
 
 Matrix Matrix::Add(const Matrix mat_a) const {
     if(this->dimy_!=mat_a.dimy_ || this->dimx_!=mat_a.dimx_){
-        return Matrix(0,0);
+        Matrix ret(0,0);
+        return ret;
     }
     Matrix matwyn(dimy_,dimx_);
     for(int i=0;i<dimy_;i++){
@@ -96,7 +97,8 @@ Matrix Matrix::Add(const Matrix mat_a) const {
 
 Matrix Matrix::Sub(const Matrix mat_s) const{
     if(this->dimy_!=mat_s.dimy_ || this->dimx_!=mat_s.dimx_){
-        return Matrix(0,0);
+        Matrix ret(0,0);
+        return ret;
     }
     Matrix matwyn(dimy_,dimx_);
     for(int i=0;i<dimy_;i++){
@@ -109,7 +111,8 @@ Matrix Matrix::Sub(const Matrix mat_s) const{
 
 Matrix Matrix::Mul(const Matrix &mat_m)const {
     if(this->dimx_!=mat_m.dimy_ ){
-        return Matrix(0,0);
+        Matrix ret(0,0);
+        return ret;
     }
     Matrix matwyn(dimy_,mat_m.dimx_);
 
@@ -126,6 +129,9 @@ Matrix Matrix::Mul(const Matrix &mat_m)const {
 }
 
 Matrix Matrix::Pow(int pot)const {
+    if(dimx_ != dimy_){
+        return Matrix(0,0);
+    }
     Matrix matwyn = *this;
     if(pot == 0){
         for(int i=0;i<dimy_;i++){
