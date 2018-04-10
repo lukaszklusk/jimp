@@ -26,9 +26,9 @@ namespace algebra{
         Matrix(std::initializer_list<std::vector<std::complex<double>>> matlist);
         std::pair<size_t,size_t> Size() const;
         std::string Print() const;
-        Matrix Add(Matrix mat2) const;
-        Matrix Sub(Matrix mat2) const;
-        Matrix Mul(Matrix mat2) const;
+        Matrix Add(const Matrix mat2) const;
+        Matrix Sub(const Matrix mat2) const;
+        Matrix Mul(const Matrix mat2) const;
         Matrix Pow(int p) const;
     private:
         std::complex<double> **mat_;

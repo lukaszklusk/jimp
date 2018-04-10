@@ -72,6 +72,11 @@ algebra::Matrix::Matrix(int dimx, int dimy) {
     for(int i=0;i<dimy_;++i){
         mat_[i] = new std::complex<double> [dimx_];
     }
+    for(int i=0;i<dimy_;++i){
+        for(int j=0;j<dimx_;++j){
+            mat_[i][j] = 0.;
+        }
+    }
 }
 
 algebra::Matrix::Matrix(const algebra::Matrix &mat) {
@@ -148,6 +153,10 @@ std::string algebra::Matrix::Print() const {
                 if (tmp[tmp.size() - 1] == '.')
                     tmp.erase(tmp.size() - 1);
             }else tmp = "0";
+            tmp = std::to_string(mat_[i][j].real());
+            tmp.erase(tmp.find_last_not_of('0') + 1, std::string::npos);
+            if (tmp[tmp.size() - 1] == '.')
+                tmp.erase(tmp.size() - 1);
             wynik += tmp;
             if(mat_[i][j].imag()) {
                 tmp = std::to_string(mat_[i][j].imag());
@@ -168,20 +177,20 @@ std::string algebra::Matrix::Print() const {
     return wynik;
 }
 
-algebra::Matrix algebra::Matrix::Add(algebra::Matrix mat2) const {
-    if(this->Size() != mat2.Size()){
+algebra::Matrix algebra::Matrix::Add(const algebra::Matrix mat2) const {
+    if(this->dimx_ != mat2.dimx_ || this->dimy_ != mat2.dimy_){
         return algebra::Matrix();
     }
-    Matrix matwyn{dimx_,dimy_};
-    for(int i=0;i<dimy_;++i){
-        for(int j=0;j<dimx_;++j){
+    Matrix matwyn(dimx_,dimy_);
+    for(int i=0;i<this->dimy_;++i){
+        for(int j=0;j<this->dimx_;++j){
             matwyn.mat_[i][j] = this->mat_[i][j] + mat2.mat_[i][j];
         }
     }
     return matwyn;
 }
 
-algebra::Matrix algebra::Matrix::Sub(algebra::Matrix mat2) const {
+algebra::Matrix algebra::Matrix::Sub(const algebra::Matrix mat2) const {
     if(this->Size() != mat2.Size()){
         return algebra::Matrix();
     }
@@ -194,7 +203,7 @@ algebra::Matrix algebra::Matrix::Sub(algebra::Matrix mat2) const {
     return matwyn;
 }
 
-algebra::Matrix algebra::Matrix::Mul(algebra::Matrix mat2) const {
+algebra::Matrix algebra::Matrix::Mul(const algebra::Matrix mat2) const {
     if(this->Size().first != mat2.Size().second){
         return algebra::Matrix();
     }
@@ -216,6 +225,8 @@ algebra::Matrix algebra::Matrix::Pow(int p) const {
 }
 
 algebra::Matrix::Matrix(algebra::Matrix &&mat) : mat_{mat.mat_}{
+    dimy_ = mat.dimy_;
+    dimx_ = mat.dimx_;
     mat.mat_ = nullptr;
 }
 
@@ -226,6 +237,8 @@ algebra::Matrix &algebra::Matrix::operator=(algebra::Matrix &&mat) {
         delete [] mat_[i];
     }
     delete [] mat_;
+    dimy_ = mat.dimy_;
+    dimx_ = mat.dimx_;
     mat_ = mat.mat_;
     mat.mat_ = nullptr;
     return *this;
