@@ -2,39 +2,46 @@
 // Created by kluch on 10.04.18.
 //
 
+
 #ifndef JIMP_EXERCISES_MATRIX_H
 #define JIMP_EXERCISES_MATRIX_H
 
-#include <complex>
 #include <string>
-#include <initializer_list>
-#include <utility>
 #include <vector>
-#include <memory>
-
-namespace algebra{
-    class Matrix{
+#include <complex>
+#include <regex>
+#include <utility>
+namespace algebra {
+    class Matrix {
     public:
         Matrix();
+
         ~Matrix();
-        Matrix(std::string strmat);
-        Matrix(int dimx, int dimy);
-        Matrix(const Matrix &mat);
+
         Matrix &operator=(const Matrix &mat);
-        Matrix(Matrix &&mat);
-        Matrix &operator=(Matrix &&mat);
-        Matrix(std::initializer_list<std::vector<std::complex<double>>> matlist);
-        std::pair<size_t,size_t> Size() const;
+
+        Matrix(int x, int y);
+
+        Matrix(const Matrix &mat);
+
+        Matrix(std::initializer_list<std::vector<std::complex<double>>> matrix_list);
+
+        Matrix Add(Matrix mat_a) const;
+
+        Matrix Sub(Matrix mat_s) const;
+
+        Matrix Mul(const Matrix &mat_m) const;
+
+        Matrix Pow(int pot) const;
+
         std::string Print() const;
-        Matrix Add(const Matrix mat2) const;
-        Matrix Sub(const Matrix mat2) const;
-        Matrix Mul(const Matrix mat2) const;
-        Matrix Pow(int p) const;
+        std::pair<size_t, size_t> Size();
+
     private:
-        std::complex<double> **mat_;
         int dimx_;
         int dimy_;
+        std::complex<double> **mat_;
+
     };
 }
-
 #endif //JIMP_EXERCISES_MATRIX_H
