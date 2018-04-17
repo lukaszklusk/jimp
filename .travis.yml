@@ -73,6 +73,8 @@ script:
   - tests/lab5test/lab5_matrix_tests
   - make lab5_text_pool_tests
   - tests/lab5test/lab5_text_pool_tests
+  - make lab6_word_counter_tests
+  - tests/lab6test/lab6_word_counter_tests
   
 notifications:
   email: false
