@@ -40,7 +40,7 @@ $$ }} This line fixes auto-indentation of the following code in Emacs.
 #ifndef GMOCK_INCLUDE_GMOCK_GMOCK_GENERATED_MATCHERS_H_
 #define GMOCK_INCLUDE_GMOCK_GMOCK_GENERATED_MATCHERS_H_
 
-#include <iterator>
+#include <iter_>
 #include <sstream>
 #include <string>
 #include <vector>

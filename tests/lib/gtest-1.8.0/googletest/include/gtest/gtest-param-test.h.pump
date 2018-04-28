@@ -87,7 +87,7 @@ TEST_P(FooTest, HasBlahBlah) {
 //                               include end. step defaults to 1.
 //  Values(v1, v2, ..., vN)    - Yields values {v1, v2, ..., vN}.
 //  ValuesIn(container)        - Yields values from a C-style array, an STL
-//  ValuesIn(begin,end)          container, or an iterator range [begin, end).
+//  ValuesIn(begin,end)          container, or an iter_ range [begin, end).
 //  Bool()                     - Yields sequence {false, true}.
 //  Combine(g1, g2, ..., gN)   - Yields all combinations (the Cartesian product
 //                               for the math savvy) of the values generated

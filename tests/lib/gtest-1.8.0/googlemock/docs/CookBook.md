@@ -1215,7 +1215,7 @@ using ::testing::ElementsAreArray;
 
 **Tips:**
 
-  * `ElementsAre*()` can be used to match _any_ container that implements the STL iterator pattern (i.e. it has a `const_iterator` type and supports `begin()/end()`), not just the ones defined in STL. It will even work with container types yet to be written - as long as they follows the above pattern.
+  * `ElementsAre*()` can be used to match _any_ container that implements the STL iter_ pattern (i.e. it has a `const_iterator` type and supports `begin()/end()`), not just the ones defined in STL. It will even work with container types yet to be written - as long as they follows the above pattern.
   * You can use nested `ElementsAre*()` to match nested (multi-dimensional) containers.
   * If the container is passed by pointer instead of by reference, just write `Pointee(ElementsAre*(...))`.
   * The order of elements _matters_ for `ElementsAre*()`. Therefore don't use it with containers whose element order is undefined (e.g. `hash_map`).
@@ -1676,7 +1676,7 @@ class MockArrayMutator : public ArrayMutator {
       .WillOnce(SetArrayArgument<0>(values, values + 5));
 ```
 
-This also works when the argument is an output iterator:
+This also works when the argument is an output iter_:
 
 ```
 using ::testing::_;
