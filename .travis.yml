@@ -75,6 +75,25 @@ script:
   - tests/lab5test/lab5_text_pool_tests
   - make lab6_word_counter_tests
   - tests/lab6test/lab6_word_counter_tests
+  - make lab7_iterable_tests
+  - tests/lab7test/lab7_iterable_tests
+  - make lab7_iterable_enumeration_tests
+  - tests/lab7test/lab7_iterable_enumeratin_tests
+  - make lab7_iterable_iterator_wrapper_tests
+  - tests/lab7test/lab7_iterable_iterator_wrapper_tests
+  - make lab7_product_tests
+  - tests/lab7test/lab7_product_tests
+  - make lab7_iterable_zipper_iterator_tests
+  - tests/lab7test/lab7_iterable_zipper_iterator_tests
+  - make lab7_zipper_tests
+  - tests/lab7test/lab7_zipper_tests
+  - make lab8_micro_dvd_correct_cases_tests
+  - tests/lab8test/lab8_micro_dvd_correct_cases
+  - make lab8_micro_dvd_error_cases_tests
+  - tests/lab8test/micro_dvd_error_cases_tests
+  - make lab8_movie_subtitles_tests
+  - tests/lab8test/lab8_movie_subtitles_tests
+
   
 notifications:
   email: false
