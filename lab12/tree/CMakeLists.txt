@@ -1,8 +1,8 @@
 
 project(tree)
 
-set(HEDEAR_FILES Tree.h)
-set(SOURCE_FILES Tree.cpp)
+set(HEDEAR_FILES Tree.h ../treeiterators/TreeIterators.h)
+set(SOURCE_FILES Tree.cpp ../treeiterators/TreeIterators.cpp)
 
 add_library(libtree STATIC ${SOURCE_FILES})
 target_include_directories(libtree PUBLIC .)

@@ -18,10 +18,11 @@ namespace tree{
         size_t Size();
         void Insert(const Element &val);
         bool Find(const Element &val);
-    private:
+        std::shared_ptr<Tree<Element>> Root();
+        
         Element val_;
-        std::unique_ptr<Tree> left_;
-        std::unique_ptr<Tree> right_;
+        std::shared_ptr<Tree> left_;
+        std::shared_ptr<Tree> right_;
         size_t dpth_;
         size_t size_;
     };
@@ -71,7 +72,7 @@ namespace tree{
         }
         if(val > val_){
             if(right_ == nullptr){
-                right_ = std::make_unique<Tree<Element>>(Tree<Element> {val});
+                right_ = std::make_shared<Tree<Element>>(Tree<Element> {val});
 
             }else{
                 right_->Insert(val);
@@ -79,7 +80,7 @@ namespace tree{
             dpth_ = right_->Depth()+1;
         }else{
             if(left_ == nullptr){
-                left_ = std::make_unique<Tree<Element>>(Tree<Element> {val});
+                left_ = std::make_shared<Tree<Element>>(Tree<Element> {val});
 
             }else{
                 left_->Insert(val);
@@ -99,6 +100,11 @@ namespace tree{
     bool Tree<Element>::Find(const Element &val) {
         if(val_ == val)return true;
         return false;
+    }
+
+    template<typename Element>
+    std::shared_ptr<Tree<Element>> Tree<Element>::Root() {
+        return std::make_shared<Tree<Element>>(*this);
     }
 
 
